@@ -99,3 +99,22 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#other things
+
+venv
+examples
+app_backup.py
+*.pyc
+*.sublime-project
+*.sublime-workspace
+save.txt
+*.log
+*.cfg
+db
+outtest
+backup
+static/images
+app_local.py
+fillup_local.py
+testCats.py
