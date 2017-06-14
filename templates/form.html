@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <!-- Errors -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <!-- entry form -->
+  <a name="top"></a>
+  <article>
+    <div id="form">
+     
+      <h2>Send A Cat</h2>
+      <p>Know someone that needs a pick me up? Well then, send them a cat. Straight to their phone.</p>
+      <p>Currently this only works for numbers in North America.</p>
+
+       <form method="post" action="/submit-form"> 
+       <div class="hp">
+        If you see this, leave this form field blank and invest in CSS support.
+        <input type="text" name="pot" value="" />
+      </div>
+      <div class="innerF">
+     <p><input type="text" name="name" size="18" class="inBox" maxlength="16" placeholder="Your Name"></p>
+      <p>
+      <input type="text" name="areaCode" size="3" class="inBox" maxlength="3" placeholder="416" /> 
+      <input type="text" name="exchange" size="3" class="inBox" maxlength="3" placeholder="555"/>
+      <input type="text" name="ending" size="4" class="inBox" maxlength="4" placeholder="4545  "/></p>
+
+      <p><input type="submit" class="btn" value="Send Cat" /></p>
+      </form>
+      </div>
+    </div>
+  </article>
+
+  <!-- some basic info -->
+
+  <article>
+    <a name="catcount"></a>
+    <h2>Daily Cat Count</h2>
+    <h3>There are {{ catsLeft }} cats still available today.</h3>
+    <p>Why is there a max on cats that can be sent you ask? Well, Twilio costs money, and 100 cats a day seems like 'nuff cats.</p>
+  </article>
+
+  <article>
+    <a name="about"></a>
+    <h2>About</h2>
+    <p>This wee app was made by <a href="http://nadinelessio.com">NL</a>. Cats are pulled from the twitter-verse and delivered via Twilio.</p>
+  </article>
+
+{% endblock %}
